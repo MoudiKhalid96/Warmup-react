@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Harry Potter with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](https://66.media.tumblr.com/b4baf9f8be68ccac9419ea6a3c306e0a/tumblr_otxe5f5kB01saw731o1_500.gif)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Create a react app that displays the different Harry Potter houses and notable characters in them with two different components `<House />` and `<Character />`.
 
-### `npm start`
+### Data
+- Save the following data to a separate .js file and import it to your App:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```js
+const houses = [{
+    houseName: "Slytherin",
+    imgSrc: "https://vignette.wikia.nocookie.net/harrypotter/images/0/00/Slytherin_ClearBG.png/revision/latest/scale-to-width-down/350?cb=20161020182557",
+    founder: "Salazar Slytherin",
+    element: "water",
+    notableCharacter: {
+        charName: "Draco Malfoy",
+        imgSrc: "https://pm1.narvii.com/6120/a9da34522b98393e52f0347fd14e6e98e296ff4f_hq.jpg",
+    }
+},
+{
+    houseName: "Ravenclaw",
+    imgSrc: "https://vignette.wikia.nocookie.net/harrypotter/images/4/4e/RavenclawCrest.png/revision/latest/scale-to-width-down/350?cb=20161020182442",
+    founder: "Rowena Ravenclaw",
+    element: "air",
+    notableCharacter: {
+        charName: "Luna Lovegood",
+        imgSrc: "http://www.electricferret.com/static/images/cbub/cbub_contender_image/6/5236/5236.jpg",
+    }
+},
+{
+    houseName: "Hufflepuff",
+    imgSrc: "https://vignette.wikia.nocookie.net/harrypotter/images/0/06/Hufflepuff_ClearBG.png/revision/latest/scale-to-width-down/350?cb=20161020182518",
+    founder: "Helga Hufflepuff",
+    element: "earth",
+    notableCharacter: {
+        charName: "Cedric Diggory",
+        imgSrc: "http://www.postavy.cz/foto/cedric-diggory-foto.jpg",
+    }
+},
+{
+    houseName: "Gryffindor",
+    imgSrc: "https://vignette.wikia.nocookie.net/harrypotter/images/b/b1/Gryffindor_ClearBG.png/revision/latest/scale-to-width-down/350?cb=20190222162949",
+    founder: "Godric Gryffindor",
+    element: "fire",
+    notableCharacter: {
+        charName: "Harry Potter",
+        imgSrc: "https://bigkidatheart.com/wp-content/uploads/2017/06/harry-potter-with-glasses-200x200.png",
+    }
+},
+]
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+export default houses;
+```
 
-### `npm test`
+### Functionality
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Display a single house (start with the first in the array)
+- Create a `Next House` button that displays the next house in our houses array.
+![](https://imgur.com/QVnpdiY.gif)
 
-### `npm run build`
+- Create a `Show Character` button that shows the character within the house.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](https://imgur.com/S4PMQbq.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Styling
+Add this code to your css file, notice that the styling deals with classes, so consider adding the class names to your elements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+>Hint: classes in JSX aren't added the same way we're used to in HTML. Instead of class="name" in your element, you will use className="name"
+```css
+body {
+  text-align: center;
+}
 
-### `npm run eject`
+img {
+  width: 200px;
+  height: 200px;
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+.card {
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow: 1px 1px 1px black;
+}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+button {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+```
